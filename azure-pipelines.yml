@@ -1,0 +1,16 @@
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  name: azure-snyk-agent  # <- Use your self-hosted pool name
+
+steps:
+- script: echo "Running on a self-hosted agent"
+  displayName: 'Simple Step'
+
+- script: |
+    java -version
+    mvn -version
+  displayName: 'Check Java & Maven'
